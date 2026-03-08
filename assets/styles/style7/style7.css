@@ -1,0 +1,50 @@
+/******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          Thumbnail Hover Zoom script                                  
+ *  Version:         1.0.0                                                    
+ *  Data:            2026/01/13                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  Adds a subtle zoom animation on video thumbnails when hovering on 
+ *  the homepage and search pages.
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML, CSS
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Applies to: https://www.youtube.com/watch*
+ *  - Tested on: Chromium and forks
+ *  - To be associated with respective .js file
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+ytd-thumbnail #thumbnail {
+  transition: transform 0.5s ease !important;
+  will-change: transform;
+	
+}
+
+.hover-zoom-active ytd-thumbnail #thumbnail {
+  transform: scale(1.10) !important;
+  z-index: 100;
+  position: relative;
+	overflow-x: clip !important;
+}

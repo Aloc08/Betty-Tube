@@ -1,0 +1,439 @@
+/******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          popup.css                  
+ *  Version:         B.2.0                                                    
+ *  Data:            2026/01/25                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML, CSS
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Works on: Chromium and forks
+ *  - To be associated with popup.html, popup.js 
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+/* --------------------------------------------------
+  DARK THEME VARIABLES (DEFAULT)
+-------------------------------------------------- */
+:root {
+  --accent: #ff2c2c;
+  --bg-gradient: linear-gradient(135deg, #0f0f0f 0%, #1b1b1b 70%, #300000 100%);
+  --card-bg: rgba(30, 30, 30, 0.8);
+  --card-border: rgba(255, 50, 50, 0.15);
+  --text-color: #f1f1f1;
+  
+  --title-gradient: linear-gradient(90deg, #ff4d4d, #ff7b00); /* rosso-arancio brillante */
+  --subtitle-color: #bbbbbb;
+}
+
+/* --------------------------------------------------
+  LIGHT THEME
+-------------------------------------------------- */
+body.light-theme {
+  --accent: #d63447;
+  --bg-gradient: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 70%, #fff0f0 100%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(214, 52, 71, 0.2);
+  --text-color: #222;
+  --title-gradient: linear-gradient(90deg, #c13535, #d76d00); /* un po’ più smorzato per il light */
+  --subtitle-color: #333;
+  color: var(--text-color);
+}
+
+body.light-theme .style-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 8px rgba(214, 52, 71, 0.1);
+}
+
+body.light-theme .style-item:hover,
+body.light-theme .style-item:focus-within {
+  background: rgba(214, 52, 71, 0.15);
+  box-shadow: 0 8px 16px rgba(214, 52, 71, 0.2);
+}
+
+/* --------------------------------------------------
+  BASIC LAYOUT
+-------------------------------------------------- */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 16px;
+
+  width: 340px;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+
+/* --------------------------------------------------
+  TEXT
+-------------------------------------------------- */
+.title {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px 4px;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+}
+
+.title-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.title-text {
+  padding-left: 4px;
+  font-size: 22px;
+  font-weight: 700;
+  background: var(--title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.subtitle {
+  margin-top: 15;
+  margin-bottom: 10px;
+  font-size: 14.5px;
+  letter-spacing: 0.02em;
+  color: var(--subtitle-color);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+
+/* --------------------------------------------------
+  STYLES LIST
+-------------------------------------------------- */
+#style-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --------------------------------------------------
+  STYLE ITEMS (CARDS)
+-------------------------------------------------- */
+.style-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(255, 44, 44, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.style-item:hover,
+.style-item:focus-within {
+  transform: scale(1.03);
+  background: rgba(255, 44, 44, 0.12);
+  box-shadow: 0 12px 24px rgba(255, 44, 44, 0.25);
+  outline: none;
+}
+
+.style-item img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #555;
+}
+
+.style-item label {
+  flex-grow: 1;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.style-item input[type="checkbox"] {
+  transform: scale(1.6);
+  accent-color: var(--accent);
+  cursor: pointer;
+  margin-right: 14px;
+  vertical-align: middle;
+}
+
+.style-item input[type="checkbox"]:focus-visible + label {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.style-item input[type="checkbox"]:checked {
+  animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  25% {transform: scale(1.2) }
+  50% { transform: scale(1.4) }
+  75% {transform: scale(1.2) }
+  100% { transform: scale(1); }
+}
+
+/* --------------------------------------------------
+  THEME SWITCH BUTTON
+-------------------------------------------------- */
+#theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#theme-toggle:hover {
+  background-color: rgba(255, 44, 44, 0.1);
+  transform: scale(1.1);
+}
+
+#theme-toggle:active {
+  transform: scale(0.75);
+}
+
+#theme-toggle img {
+  width: 20px;
+  height: 20px;
+  filter: invert(0.9); 
+  transition: filter 0.3s ease;
+  pointer-events: none;
+}
+
+body.light-theme #theme-toggle img {
+  filter: invert(0.1); 
+}
+
+/* --------------------------------------------------
+  CONFLICT NOTES
+-------------------------------------------------- */
+
+.conflict-note {
+  font-size: 0.65rem;
+  color: var(--subtitle-color);
+  margin-top: 16px;
+  text-align: center;
+  font-style: italic;
+  user-select: none;
+}
+
+/* --------------------------------------------------
+  VERSION SECTION
+-------------------------------------------------- */
+
+.version {
+  font-size: 0.75rem;
+  color: var(--subtitle-color);
+  margin-top: 40px;
+  text-align: center;
+  user-select: none;
+}
+.version a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.version a:hover,
+.version a:focus {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------
+  prefers-reduced-motion: reduce
+-------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* --------------------------------------------------
+  COLOR PICKER
+-------------------------------------------------- */
+.color-picker {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  border-radius: 50%;
+  background: none;
+
+  cursor: pointer;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker::-webkit-color-swatch {
+  border-radius: 50%;
+  border: 2px solid var(--card-border);
+}
+
+/* Hover feedback */
+.style-item:hover .color-picker {
+  transform: scale(1.1);
+}
+
+/* --------------------------------------------------
+  ZOOM SLIDER
+-------------------------------------------------- */
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;      
+  flex-direction:column;  
+}
+
+.style-item label + .slider-container {
+  margin-top: 4px;
+}
+
+/* Slider */
+.slider-container input[type="range"] {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.slider-container .zoom-value {
+  width: 40px;
+  text-align: right;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* --------------------------------------------------
+  Logo Betty Tube
+-------------------------------------------------- */
+.title-logo.logo {
+  width: 70px; 
+  height: 40px;
+  display: inline-flex;
+  position: relative;
+  background: linear-gradient(145deg, #ff2c2c, #cc2424);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4), inset 0 -3px 8px rgba(255,255,255,0.1);
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+/* Play button */
+.title-logo .play {
+  width: 0;
+  height: 0;
+  border-left: 18px solid white;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  margin-left: 4px;
+  filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #fff);
+}
+
+/* Stars container */
+.title-logo .stars {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  display: flex;
+  gap: 3px;
+}
+
+/* Star shape */
+.title-logo .star {
+  width: 3px;
+  height: 3px;
+  background: white;
+  transform: rotate(45deg);
+  border-radius: 1px;
+  box-shadow:
+    0 0 4px white,
+    0 0 8px #ff2c2c;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+.title-logo .star:nth-child(2) {
+  width: 2.5px;
+  height: 2.5px;
+  opacity: 0.8;
+  animation-delay: 0.3s;
+}
+
+.title-logo .star:nth-child(3) {
+  width: 2px;
+  height: 2px;
+  opacity: 0.6;
+  animation-delay: 0.6s;
+}
+
+@keyframes twinkle {
+  0%, 100% { transform: rotate(45deg) scale(1); opacity: 0.7; }
+  50% { transform: rotate(45deg) scale(1.3); opacity: 1; }
+}
+
+/* Reflection overlay */
+.title-logo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  pointer-events: none;
+}

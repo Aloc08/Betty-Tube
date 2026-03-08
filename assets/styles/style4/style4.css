@@ -1,0 +1,89 @@
+  /******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          Comments on the left script                                       
+ *  Version:         1.0.0                                                    
+ *  Data:            2026/01/13                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  Moves comments to the left, in place of suggested videos. 
+ *  Suggested videos appear below the comments.
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML, CSS
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Applies to: https://www.youtube.com/watch*
+ *  - Tested on: Chromium and forks
+ *  - To be associated with respective .js file
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: clip !important;
+}
+
+#columns {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
+
+#secondary {
+  order: 0 !important;
+  width: 400px !important;
+  margin-right: 16px !important;
+  margin-left: 20px !important;
+  flex-shrink: 0 !important;
+}
+
+#primary {
+  order: 1 !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  margin-left: 0 !important;
+}
+
+#primary-inner {
+  margin-left: 0 !important;
+  width: auto !important;
+  flex-grow: 1 !important;
+  min-width: 0 !important;
+}
+
+ytd-watch-next-secondary-results-renderer {
+  order: 2 !important;
+}
+
+.sidebar-comments {
+    order: 1 !important;
+    transform: scale(0.97);
+    transform-origin: top left;
+	
+}
+
+#comments {
+  max-height: 640px !important; 
+  overflow-y: auto !important;
+  margin-bottom: 47px !important;
+	margin-left: 10px;
+}

@@ -1,0 +1,43 @@
+/******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          Disable Shorts Suggestions script                                    
+ *  Version:         1.0.0                                                    
+ *  Data:            2026/01/13                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  Removes the ability for Shorts suggestions to appear on youtube.
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML, CSS
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Applies to: https://www.youtube.com/watch*
+ *  - Tested on: Chromium and forks
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+
+ytd-reel-shelf-renderer,
+ytd-rich-shelf-renderer[is-shorts],
+ytd-rich-section-renderer:has(ytd-reel-shelf-renderer),
+ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]) {
+	display: none !important;
+}

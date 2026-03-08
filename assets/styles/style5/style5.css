@@ -1,0 +1,57 @@
+/******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          Suggestions on the left script                                      
+ *  Version:         B.1.0                                                    
+ *  Data:            2026/01/13                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  Moves the suggested videos to the left of the player. 
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       JS
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Applies to: https://www.youtube.com/watch*
+ *  - Tested on: Chromium and forks
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+html, body {
+	height: auto !important;
+	overflow-y: auto !important;
+	overflow-x: clip !important;
+}
+
+#columns {
+  display: flex !important;
+  flex-direction: row !important;
+	width: 100%;
+}
+
+#secondary {
+  order: -1 !important;
+	padding-left: 20px !important;
+	padding-right: 0px !important;
+}
+
+#primary {
+  order: 0 !important;
+}

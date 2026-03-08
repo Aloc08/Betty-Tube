@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Betty-Tube",
+  "version": "1.0.0",
+  "description": "Personalize YouTube's UI with personalized CSS/JS styles",
+  "icons": {
+    "128": "assets/icons/bt_logo.png"
+  },
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "assets/icons/bt_logo.png"
+  },
+  "background": {
+    "service_worker": "/background.js"
+  },
+  "web_accessible_resources": [
+  {
+    "resources": [
+      "assets/styles/**",
+      "bootstrap.js"
+    ],
+    "matches": ["*://*.youtube.com/*"]
+  },
+  {
+    "resources": [
+      "assets/icons/bytvp_logo.png",
+      "assets/images/**"
+    ],
+    "matches": ["<all_urls>"]
+  }
+]
+
+
+}

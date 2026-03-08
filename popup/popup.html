@@ -1,0 +1,84 @@
+<!--****************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          popup.html                  
+ *  Version:         B.1.0                                                    
+ *  Data:            2026/01/13                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Tested on: Chromium and forks
+ *  - To be associated with popup.css, popup.js 
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Betty Tube</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <button id="theme-toggle" title="Switch Theme">
+    <img src="../assets/icons/half-moon.svg" alt="Toggle Theme" />
+  </button>
+  
+  <h2 class="title">
+    
+    <div class="title-logo logo">
+      <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+      </div>
+      <div class="play"></div>
+    </div>
+
+    <span class="title-text">Betty Tube</span>
+  </h2>
+
+  <p class="subtitle">Youtube Interface Enhancer</p>
+
+  <p class="subtitle">Select which styles to apply</p>
+
+  <div id="style-list"></div>
+
+  <div class="conflict-note">*Apply one at a time - can cause conflict issues</div>
+
+  <p class="version">
+    Version: <span id="version">loading...</span> &nbsp;|&nbsp;
+    <a href="https://github.com/Aloc08/Better-YT-Videoplayer/releases" target="_blank" rel="noopener noreferrer">
+      Check updates on GitHub
+    </a>
+  </p>
+
+</body>
+
+<script src="popup.js"></script>
+
+</html>
+

@@ -1,0 +1,64 @@
+/******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          Button Hover Pop & Glow                      
+ *  Version:         2.0.0                                                    
+ *  Data:            2026/01/25                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  Adds a soft zoom and subtle colored glow on hover to buttons across YouTube.
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML, CSS, JS
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Applies to: https://www.youtube.com/*
+ *  - Works on: Chromium and forks
+ *  - To be associated with respective .js file
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+:root {
+  --hover-scale: 1.07;
+  --hover-glow-color: 255, 0, 0;   
+  --hover-glow-strength: 0.35;
+  --hover-glow-blur: 12px;
+  --hover-duration: 0.35s;
+  --hover-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:not(.ytp-button),
+yt-icon-button:not(.ytp-button),
+tp-yt-paper-icon-button:not(.ytp-button) {
+  transition:
+    transform var(--hover-duration) var(--hover-easing),
+    box-shadow var(--hover-duration) var(--hover-easing);
+  will-change: transform;
+}
+
+button:not(.ytp-button):hover,
+yt-icon-button:not(.ytp-button):hover,
+tp-yt-paper-icon-button:not(.ytp-button):hover {
+  transform: scale(var(--hover-scale)) !important;
+  box-shadow: 
+    0 0 var(--hover-glow-blur)
+    rgba(var(--hover-glow-color), var(--hover-glow-strength)) !important;
+}
+

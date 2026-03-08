@@ -1,0 +1,99 @@
+/******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          Centered videoplayer script                                        
+ *  Version:         1.0.0                                                    
+ *  Data:            2026/01/25                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  Displays the YouTube's videoplayer at the center of the screen with video 
+ *  suggestion and comments in coloumn down the player.
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML, CSS
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Applies to: https://www.youtube.com/watch*
+ *  - Works on: Chromium and forks
+ *  - To be associated with respective .js file
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+
+html, body {
+    height: auto !important;
+    overflow-y: auto !important;
+    overflow-x: clip !important;
+}
+
+#columns {
+    display: flex !important;
+    flex-direction: column !important;
+    margin: auto !important;
+    padding-top: 0px !important;
+    width: 100%;
+    box-sizing: border-box;     
+    min-height: 0;                
+    overflow: visible;    
+}
+
+#primary {
+    
+    width: 99.99999999999% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+#primary-inner {
+    padding-left: 24px !important;
+    margin: none !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#player {
+    padding: none !important;
+    width: 100% !important;
+    margin: none !important;
+}
+
+#underPlayer {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 24px;
+  margin-top: 40px !important;
+  width: 87%;
+  max-width: 7680px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10 !important;
+}
+
+#secondary {
+  flex: 0 0 45% !important; 
+  max-width: 45% !important;
+}
+
+#comments {
+  flex: 1 1 auto; 
+  max-width: 55%;
+  overflow-y: auto;
+  padding-left: 24px;
+}

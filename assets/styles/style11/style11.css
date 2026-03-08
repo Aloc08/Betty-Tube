@@ -1,0 +1,78 @@
+/******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          Enable YouTube Dislikes                    
+ *  Version:         B.1.0                                                    
+ *  Data:            2026/01/13                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  Displays the dislike count on YouTube videos using crowd-sourced data 
+ *  provided by the public API from Return YouTube Dislike 
+  * (https://returnyoutubedislike.com).
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML, CSS
+ *  - APIs / Libs:    Return Youtube Dislikes
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Applies to: https://www.youtube.com/*
+ *  - Tested on: Chromium and forks
+ *  - To be associated with respective .js file
+ *  - Any modification to the code could render the extension unoperable 
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Dislike"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Non mi piace"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="No me gusta"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Je n’aime pas"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Gefällt mir nicht"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Não curtir"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Не нравится"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="不喜欢"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="低評価"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="싫어요"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Vind ik niet leuk"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Nie lubię"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Beğenme"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="لم يعجبني"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Ogilla"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Kan ikke lide"],
+ytd-menu-renderer #top-level-buttons-computed button[aria-label*="Liker ikke"] {
+  min-width: 90px !important;
+  max-width: 160px !important;
+  padding: 0 12px !important;
+  justify-content: flex-start !important;
+  position: relative;
+  box-sizing: border-box !important;
+}
+
+.dislike-count {
+  
+  padding-left: 0px !important;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--yt-spec-text-primary) !important;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}

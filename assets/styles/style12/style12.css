@@ -1,0 +1,245 @@
+/******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          Engagement Chip Enhancer                    
+ *  Version:         B.1.0                                                    
+ *  Data:            2026/01/13                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  Restyles YouTube's Like, Dislike, Share buttons and more with a cleaner, 
+ *  chip-style UI.
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML, CSS
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Applies to: https://www.youtube.com/watch*
+ *  - Tested on: Chromium and forks
+ *  - To be associated with respective .js file
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+#top-level-buttons-computed button,
+#flexible-item-buttons button,
+#flexible-item-buttons button.yt-spec-button-shape-next--icon-button,
+#flexible-item-buttons yt-button-shape > button.yt-spec-button-shape-next--icon-button {
+  border-radius: 16px !important;
+  padding: 6px 14px !important;
+  margin-right: 6px !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(4px) !important;
+  transition: background 0.25s ease, transform 0.2s ease, color 0.2s ease, border 0.2s ease !important;
+  font-size: 14px !important;
+  min-height: 38px !important;
+  line-height: 1.2 !important;
+  color: inherit !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+html:not([dark]) #top-level-buttons-computed button,
+html:not([dark]) #flexible-item-buttons button,
+html:not([dark]) #flexible-item-buttons button.yt-spec-button-shape-next--icon-button,
+html:not([dark]) #flexible-item-buttons yt-button-shape > button.yt-spec-button-shape-next--icon-button {
+  background: linear-gradient(135deg, #fafafa, #eaeaea);
+  color: #222 !important;
+  border-color: #ccc !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[dark] #top-level-buttons-computed button,
+html[dark] #flexible-item-buttons button,
+html[dark] #flexible-item-buttons button.yt-spec-button-shape-next--icon-button,
+html[dark] #flexible-item-buttons yt-button-shape > button.yt-spec-button-shape-next--icon-button {
+  background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
+  color: #eee !important;
+  border-color: #444 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Hover */
+@media (hover: hover) and (pointer: fine) {
+  #top-level-buttons-computed button:hover,
+  #flexible-item-buttons button:hover,
+  #flexible-item-buttons button.yt-spec-button-shape-next--icon-button:hover,
+  #flexible-item-buttons yt-button-shape > button.yt-spec-button-shape-next--icon-button:hover {
+    transform: scale(1.04) !important;
+    filter: brightness(1.07) !important;
+    box-shadow: 0 0 0 2px rgba(100, 100, 100, 0.08) inset !important;
+  }
+}
+
+/* Focus */
+#top-level-buttons-computed button:focus,
+#flexible-item-buttons button:focus,
+#flexible-item-buttons button.yt-spec-button-shape-next--icon-button:focus,
+#flexible-item-buttons yt-button-shape > button.yt-spec-button-shape-next--icon-button:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(100, 200, 100, 0.3) !important;
+}
+
+@keyframes gradientShiftLike {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Like */
+#top-level-buttons-computed button.pressed-like {
+  background: linear-gradient(270deg, #a8d5a2, #57c88a, #2e8b57, #57c88a) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShiftLike 8s ease infinite !important;
+  color: #fff !important;
+  border-color: #119f61 !important;
+  box-shadow:
+    0 2px 4px rgba(0,128,0,0.3),
+    0 6px 12px rgba(0,128,0,0.2),
+    0 12px 24px rgba(0,128,0,0.15) !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#top-level-buttons-computed button.pressed-like:hover {
+  transform: scale(1.08) !important;
+  box-shadow:
+    0 8px 16px rgba(46, 139, 87, 0.5),
+    0 16px 32px rgba(46, 139, 87, 0.3) !important;
+}
+
+#top-level-buttons-computed button.pressed-like .yt-spec-button-shape-next__icon {
+  animation: pulseIcon 2s infinite ease-in-out !important;
+  color: #e6ffe6 !important;
+}
+
+@keyframes gradientShiftDislike {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Dislike */
+#top-level-buttons-computed button.pressed-dislike {
+  background: linear-gradient(270deg, #f4b1ae, #ef6a6a, #b8322f, #ef6a6a) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShiftDislike 8s ease infinite !important;
+  color: #fff !important;
+  border-color: #d93025 !important;
+  box-shadow:
+    0 2px 4px rgba(255,0,0,0.3),
+    0 6px 12px rgba(255,0,0,0.2),
+    0 12px 24px rgba(255,0,0,0.15) !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#top-level-buttons-computed button.pressed-dislike:hover {
+  transform: scale(1.08) !important;
+  box-shadow:
+    0 8px 16px rgba(217, 48, 37, 0.5),
+    0 16px 32px rgba(217, 48, 37, 0.3) !important;
+}
+
+#top-level-buttons-computed button.pressed-dislike .yt-spec-button-shape-next__icon {
+  animation: pulseIcon 2s infinite ease-in-out !important;
+  color: #ffd6d6 !important;
+}
+
+#top-level-buttons-computed .yt-spec-button-shape-next__icon,
+#flexible-item-buttons .yt-spec-button-shape-next__icon,
+#flexible-item-buttons button.yt-spec-button-shape-next--icon-button .yt-spec-button-shape-next__icon,
+#flexible-item-buttons yt-button-shape > button.yt-spec-button-shape-next--icon-button .yt-spec-button-shape-next__icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+#top-level-buttons-computed .yt-spec-button-shape-next__button-text-content,
+#flexible-item-buttons .yt-spec-button-shape-next__button-text-content,
+#flexible-item-buttons button.yt-spec-button-shape-next--icon-button .yt-spec-button-shape-next__button-text-content,
+#flexible-item-buttons yt-button-shape > button.yt-spec-button-shape-next--icon-button .yt-spec-button-shape-next__button-text-content {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease;
+}
+
+#button-shape > button.yt-spec-button-shape-next {
+  border-radius: 16px !important;
+  padding: 6px 14px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  margin-right: 6px !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(4px) !important;
+  transition: background 0.25s ease, transform 0.2s ease, color 0.2s ease, border 0.2s ease !important;
+  font-size: 14px !important;
+  min-height: 38px !important;
+  line-height: 1.2 !important;
+  color: inherit !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  background: linear-gradient(135deg, #fafafa, #eaeaea) !important;
+  border-color: #ccc !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[dark] #button-shape > button.yt-spec-button-shape-next {
+  background: linear-gradient(135deg, #2a2a2a, #1c1c1c) !important;
+  color: #eee !important;
+  border-color: #444 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #button-shape > button.yt-spec-button-shape-next:hover {
+    transform: scale(1.04) !important;
+    filter: brightness(1.07) !important;
+    box-shadow: 0 0 0 2px rgba(100, 100, 100, 0.08) inset !important;
+  }
+}
+
+/* Focus */
+#button-shape > button.yt-spec-button-shape-next:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(100, 200, 100, 0.3) !important;
+}
+
+#button-shape > button.yt-spec-button-shape-next .yt-spec-button-shape-next__icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  margin: 0 auto !important;
+}

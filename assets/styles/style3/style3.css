@@ -1,0 +1,92 @@
+ /******************************************************************************
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ *                                                                      
+ *  Betty Tube                                                
+ *  Personalize YouTube's UI with personalized CSS/JS styles                                 
+ *                           
+ *  Script:          Comments on the right script                                       
+ *  Version:         1.0.0                                                    
+ *  Data:            2026/01/25                                                
+ *  Author:          Alessio Occulto (Aloc08)                                           
+ *  
+ * ----------------------------------------------------------------------------
+ *  DESCRIPTION:
+ *  Moves comments to the right, in place of suggested videos. 
+ *  Suggested videos appear below the comments.
+ *
+ * ----------------------------------------------------------------------------
+ *  SOFTWARE:
+ *  - Language:       HTML, CSS
+ *  - APIs / Libs:    N/A
+ *
+ * ----------------------------------------------------------------------------
+ *  CREDITS:
+ *  Alessio Occulto
+ *  ______________________________________
+ *  Contacts: 
+ *    -E-Mail: alessio.occulto.dev@gmail.com
+ *
+ * ----------------------------------------------------------------------------
+ *  NOTES:
+ *  - GitHub: https://github.com/Aloc08/Betty-Tube
+ *  - Applies to: https://www.youtube.com/watch*
+ *  - Works on: Chromium and forks
+ *  - To be associated with respective .js file
+ *
+ *  ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+ ******************************************************************************/
+
+
+ /* da rendere dinamica la lunghezza dei commenti in base all'altezza del player */
+
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: clip !important;
+}
+
+ytd-watch-flexy[flexy] #primary {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
+
+#primary-inner {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+	min-width: 0 !important;  
+	
+}
+
+/* Sidebar */
+#secondary {
+  width: 400px !important;
+  max-width: 400px !important;
+  flex-shrink: 0 !important;
+  margin-left: 12px !important;
+}
+
+#secondary-inner {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+ytd-watch-next-secondary-results-renderer {
+  order: 2 !important;
+}
+
+
+.sidebar-comments {
+  order: 1 !important;
+  transform: scale(0.97);
+  transform-origin: top left;
+
+}
+
+
+#comments {
+  max-height: 640px !important; 
+  overflow-y: auto !important;
+  margin-bottom: 47px !important;
+}
+
