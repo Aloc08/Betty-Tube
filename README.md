@@ -1,3 +1,5 @@
+<img src=https://github.com/Aloc08/Betty-Tube/blob/201210b879dd28d61b57c782ada253bbbcdaf9ac/assets/icons/bt_logo.png width=100>
+
 # Betty Tube
 
 ![Version](https://img.shields.io/badge/1.0.0-155875)
@@ -7,7 +9,6 @@
 
 A lightweight browser extension to customize and improve the YouTube interface.  
 No need for additional tools — everything is built-in and runs directly via the extension.
-
 
 
 ## 🎨 Available Enhancements
@@ -125,4 +126,5 @@ Developed and maintained by [Aloc08](https://github.com/Aloc08).
 ## License
 
 This project is licensed under the [GPL-3.0 License](LICENSE).
+
 
